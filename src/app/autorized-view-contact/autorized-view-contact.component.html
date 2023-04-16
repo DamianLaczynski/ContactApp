@@ -1,1 +1,39 @@
-<p>autorized-view-contact works!</p>
+<div class="vw-100" class="mx-auto p-2" style="width: 50%;" *ngIf="contact">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="contact_email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="contact_email" aria-describedby="emailHelp" [(ngModel)]="contact.email">
+          </div>
+        <div class="mb-2">
+            <label for="contact_name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="contact_name" aria-describedby="emailHelp" [(ngModel)]="contact.name">
+    
+          </div>
+          <div class="mb-2">
+            <label for="contact_surname" class="form-label">Surname</label>
+            <input type="text" class="form-control" name="contact_surname" aria-describedby="emailHelp" [(ngModel)]="contact.surname">
+          </div>
+          <div class="mb-2">
+          <label for="contact_role" class="form-label">Role</label>
+          <select class="form-select" name="contact_role" aria-label="Default select example" [(ngModel)]="contact.roleID">
+            <option selected>Choose the Role</option>
+            <option value="1">Służbowy</option>
+            <option value="2">Prywatny</option>
+            <option value="3">Inne</option>
+          </select>
+        </div>
+          <div class="mb-2">
+            <label for="contact_phoneNumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" name="contact_phoneNumber" aria-describedby="emailHelp" [(ngModel)]="contact.phoneNumber">
+          </div>
+          <div class="mb-2">
+            <label for="contact_dataOfBirth" class="form-label">Date Of Birth</label>
+            <input class="form-control" name="contact_dataOfBirth" aria-describedby="emailHelp" [(ngModel)]="contact.dateOfBirth">
+          </div>
+        
+        
+        <button type="submit" class="btn btn-primary" >Update</button>
+        <button (click)="onDelete()" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+    

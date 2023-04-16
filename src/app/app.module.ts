@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AutorizedViewContactComponent } from './autorized-view-contact/autorized-view-contact.component';
 import { PublicContactsComponent } from './public-contacts/public-contacts.component'
 import { LoginComponent } from './login/login.component';
+import { CreateContactComponent } from './create-contact/create-contact.component';
 
 @NgModule({
   declarations: [
