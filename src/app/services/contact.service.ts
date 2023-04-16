@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Contact } from '../models/contact.model';
+import { PublicContact } from '../models/publicContact.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,10 @@ export class ContactService {
 
   API_URL = environment.apiUrl;
 
-  getAllPosts(): Observable<Contact[]> {
-   return this.http.get<Contact[]>(this.API_URL + '/api/public-contact');
+  //metoda wysyłająca żądanie GET o wszystkie kontakty 
+  //dla niezalogowanych, tylko niewrażliwe dane
+  getAllPosts(): Observable<PublicContact[]> {
+   return this.http.get<PublicContact[]>(this.API_URL + '/api/public-contact');
   }
+  
 }
-
