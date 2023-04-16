@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { LoginModel } from '../models/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { LoginModel } from '../models/login.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-constructor(private auth: AuthService) {}
+constructor(private auth: AuthService, private router: Router) {}
 ngOnInit(): void {
     
 }
@@ -21,6 +22,7 @@ onLogin(){
   .subscribe(
     response => {
       this.auth.storeToken(response.token);
+      this.router.navigate(['contacts'])
     }
   )
 }
