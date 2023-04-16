@@ -1,21 +1,23 @@
-<table>
+<button type="button" class="btn btn-primary" [routerLink]="['/create']">Add New Contact</button>
+
+<table class="table">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Phone Number</th>
-            <th>Role</th>
-            <th></th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Role</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let contact of contacts">
-            <td>{{contact.name}}</td>
+            <td scope="row">{{contact.name}}</td>
             <td>{{contact.surname}}</td>
             <td>{{contact.phoneNumber}}</td>
             <td>{{contact.role}}</td>
             <td>
-                <a>View</a>
+                <a [routerLink]="['/contacts', contact.id]">View</a>
             </td>
         </tr>
     </tbody>

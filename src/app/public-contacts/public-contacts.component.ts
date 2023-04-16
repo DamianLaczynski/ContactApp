@@ -1,4 +1,4 @@
-import { Contact } from 'src/app/models/contact.model';
+import { PublicContact } from 'src/app/models/publicContact.model';
 import { ContactService } from '../services/contact.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class PublicContactsComponent implements OnInit {
-  contacts: Contact[] = [];
+  contacts: PublicContact[] = [];
   constructor(private ContactService: ContactService) { }
 
 
