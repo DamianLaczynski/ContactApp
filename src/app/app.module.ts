@@ -16,7 +16,8 @@ import { CreateContactComponent } from './create-contact/create-contact.componen
     AppComponent,
     AutorizedViewContactComponent,
     PublicContactsComponent,
-    LoginComponent
+    LoginComponent,
+    CreateContactComponent
   ],
   imports: [
     BrowserModule,

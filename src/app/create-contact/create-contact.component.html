@@ -1,0 +1,46 @@
+<div class="vw-100" class="mx-auto p-2" style="width: 50%;" *ngIf="newContact">
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="contact_email" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="contact_email" aria-describedby="emailHelp" [(ngModel)]="newContact.email">
+      </div>
+      <div class="mb-3">
+        <label for="contact_password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="contact_password" aria-describedby="emailHelp" [(ngModel)]="newContact.password">
+      </div>
+      <div class="mb-3">
+        <label for="contact_confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" name="contact_confirmPassword" aria-describedby="emailHelp" [(ngModel)]="newContact.confirmPassword">
+      </div>
+    <div class="mb-2">
+        <label for="contact_name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="contact_name" aria-describedby="emailHelp" [(ngModel)]="newContact.name">
+
+      </div>
+      <div class="mb-2">
+        <label for="contact_surname" class="form-label">Surname</label>
+        <input type="text" class="form-control" name="contact_surname" aria-describedby="emailHelp" [(ngModel)]="newContact.surname">
+      </div>
+      <div class="mb-2">
+      <label for="contact_role" class="form-label">Role</label>
+      <select class="form-select" name="contact_role" aria-label="Default select example" [(ngModel)]="newContact.roleID">
+        <option selected>Choose the Role</option>
+        <option value="1">Służbowy</option>
+        <option value="2">Prywatny</option>
+        <option value="3">Inne</option>
+      </select>
+    </div>
+      <div class="mb-2">
+        <label for="contact_phoneNumber" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" name="contact_phoneNumber" aria-describedby="emailHelp" [(ngModel)]="newContact.phoneNumber">
+      </div>
+      <div class="mb-2">
+        <label for="contact_dataOfBirth" class="form-label">Date Of Birth</label>
+        <input class="form-control" name="contact_dataOfBirth" aria-describedby="emailHelp" [(ngModel)]="newContact.dateOfBirth">
+      </div>
+    
+    
+    <button type="submit" class="btn btn-primary" >Utwórz</button>
+    <button type="reset" class="btn btn-primary">Resetuj</button>
+  </form>
+</div>
